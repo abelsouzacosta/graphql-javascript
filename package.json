@@ -7,7 +7,7 @@
   "author": "Abel Souza Costa Junior <abelsouzacosta@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js -e js,gql"
+    "dev": "nodemon --exec babel-node src/server/http/index.js -e js,gql"
   },
   "husky": {
     "hooks": {
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "apollo-server": "^2.25.2",
+    "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
     "merge-graphql-schemas": "^1.7.8",
     "mongoose": "^5.13.2"
