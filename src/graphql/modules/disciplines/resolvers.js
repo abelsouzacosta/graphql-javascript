@@ -1,6 +1,16 @@
 import Discipline from "../../../server/db/models/Discipline";
+import Teacher from "../../../server/db/models/Teacher";
 
 export default {
-  Query: {},
-  Mutation: {},
+  Discipline: {
+    teacher: (discipline) => Teacher.findById(discipline.teacher),
+  },
+
+  Query: {
+    disciplines: () => Discipline.find(),
+    discipline: (_, { id }) => Discipline.findById(id),
+  },
+  Mutation: {
+    createDiscipline: (_, { data }) => Discipline.create(data),
+  },
 };
