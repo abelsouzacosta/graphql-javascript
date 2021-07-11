@@ -11,5 +11,10 @@ export default {
       Teacher.findByIdAndUpdate(id, data, {
         new: true,
       }),
+    deleteTeacher: async (_, { id }) => {
+      const deleted = await Teacher.findByIdAndDelete(id);
+
+      return !!deleted;
+    },
   },
 };
