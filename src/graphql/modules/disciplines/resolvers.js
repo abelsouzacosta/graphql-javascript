@@ -12,5 +12,9 @@ export default {
   },
   Mutation: {
     createDiscipline: (_, { data }) => Discipline.create(data),
+    updateDiscipline: (_, { id, data }) =>
+      Discipline.findByIdAndUpdate(id, data, {
+        new: true,
+      }),
   },
 };
