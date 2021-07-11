@@ -5,10 +5,16 @@ type User {
   password: String!
 }
 
-input UserInput {
+input CreateUserInput {
   name: String!
   email: String!
   password: String!
+}
+
+input UpdateUserInput {
+  name: String
+  email: String
+  password: String
 }
 
 type Query {
