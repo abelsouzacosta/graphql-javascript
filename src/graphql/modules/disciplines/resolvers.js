@@ -16,5 +16,10 @@ export default {
       Discipline.findByIdAndUpdate(id, data, {
         new: true,
       }),
+    deleteDiscipline: async (_, { id }) => {
+      const deleted = await Discipline.findByIdAndDelete(id);
+
+      return !!deleted;
+    },
   },
 };
