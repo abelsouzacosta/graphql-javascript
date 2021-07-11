@@ -1,0 +1,31 @@
+type Teacher {
+  _id: ID!
+  name: String!
+  sex: String!
+  age: Int
+}
+
+input CreateTeacherInput {
+  name: String!
+  sex: String!
+  age: Int
+}
+
+input UpdateTeacherInput {
+  name: String
+  sex: String
+  age: Int
+}
+
+# get operations on Teacher
+type Query {
+  teachers: [Teacher!]!
+  teacher(id: ID!): Teacher!
+}
+
+# operations of modification
+type Mutation {
+  createTeacher(data: CreateTeacherInput!): Teacher!
+  updateTeacher(id: ID!, data: UpdateTeacherInput!): Teacher!
+  deleteTeacher(id: ID!): Boolean
+}

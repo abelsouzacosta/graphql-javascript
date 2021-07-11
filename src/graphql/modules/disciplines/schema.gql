@@ -1,0 +1,21 @@
+type Discipline {
+  _id: ID!
+  name: String!
+  teacher: Teacher!
+}
+
+input DisciplineInput {
+  name: String!
+  teacher: ID!
+}
+
+type Query {
+  disciplines: [Discipline!]!
+  discipline(id: ID!): Discipline!
+}
+
+type Mutation {
+  createDiscipline(data: DisciplineInput!): Discipline!
+  updateDiscipline(id: ID!, data: DisciplineInput!): Discipline!
+  deleteDiscipline(id: ID!): Boolean
+}
