@@ -4,9 +4,14 @@ type Discipline {
   teacher: Teacher!
 }
 
-input DisciplineInput {
+input CreateDisciplineInput {
   name: String!
   teacher: ID!
+}
+
+input UpdateDisciplineInput {
+  name: String
+  teacher: ID
 }
 
 type Query {
@@ -15,7 +20,7 @@ type Query {
 }
 
 type Mutation {
-  createDiscipline(data: DisciplineInput!): Discipline!
-  updateDiscipline(id: ID!, data: DisciplineInput!): Discipline!
+  createDiscipline(data: CreateDisciplineInput!): Discipline!
+  updateDiscipline(id: ID!, data: UpdateDisciplineInput!): Discipline!
   deleteDiscipline(id: ID!): Boolean
 }
